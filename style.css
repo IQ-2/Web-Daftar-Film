@@ -1,0 +1,65 @@
+body {
+  font-family: "franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #033761;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 10px rgb(27, 90, 161);
+}
+
+header h1 {
+  margin: 0;
+  color: #60b7cf;
+}
+
+#cari {
+  display: flex;
+}
+
+#input-cari {
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #555;
+  background-color: rgb(234, 237, 238);
+  color: rgb(0, 0, 0);
+  border-radius: 4px 0 0 4px;
+  width: 250px;
+}
+
+#cari button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  color: #033761;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px 1fr));
+  gap: 1.5rem;
+}
+
+.movie-card {
+  background-color: #033761;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loading,
+.not-found {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  display: none;
+}
