@@ -4,16 +4,28 @@ const API_POPULAR_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${AP
 
 function tampilMovie(movies){
     const gridMovie = document.getElementById('movie-grid');
-    movies.forEach(movie => {
+    movies.forEach((movie) => {
         const{title, poster_path, vote_average, release_date} = movie;
+
+        //console.log(poster_path);
 
         // Buat elemen baru untuk card movie/film
 
         const movieCard = document.createElement('div');
         movieCard.classList.add('movie-card');
 
-        const posterUrl = 'https://image.tmdb.org/t/p/w500';
-        movieCard.innerHTML='<img src = "${poterUrl}"></img>';
+        const IMG_BASE_URL = `https://image.tmdb.org/t/p/w500`;
+
+        const posterURL = IMG_BASE_URL + poster_path ;
+
+        movieCard.innerHTML =`
+        <img src="${posterURL}"></img>
+        <div class="movie-card-info">
+        <h3>${title}</h3>
+        <span>Rating : ${vote_average}</span>
+        <p>Tahun : ${release_date}</p>
+        </div>
+        `;
 
         gridMovie.appendChild(movieCard);
     });
@@ -30,7 +42,7 @@ async function ambilDataMovie(url) {
 
     const data = await response.json();
     if(data.results.length > 0){
-        tampilMovie(data.result);
+     tampilMovie(data.results);
     }
     //console.log(data);
 
