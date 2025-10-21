@@ -1,4 +1,4 @@
-const API_KEY = "547559af62bde1dbc910d4dc539d895c";
+const API_KEY = "a540123aca03a0e0fa62d1367165c5e2";
 
 const API_POPULAR_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
 
